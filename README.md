@@ -1,4 +1,8 @@
-# The best free AI model aggregator
+# free-model-aggregator
+
+[![make.fun · free-model-aggregator-01](https://make.fun/badge/free-model-aggregator-01.svg)](https://make.fun/bounty/free-model-aggregator-01?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
+[![rank](https://make.fun/badge/free-model-aggregator-01/E29A/free-model-aggregator/rank.svg)](https://make.fun/bounty/free-model-aggregator-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
+[![reward](https://make.fun/badge/free-model-aggregator-01/E29A/free-model-aggregator/reward.svg)](https://make.fun/bounty/free-model-aggregator-01?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
 
 One Node server that fronts ten free-tier AI providers behind a single pair of
 APIs: the OpenAI Chat Completions API (`POST /v1/chat/completions`) and the
@@ -52,24 +56,6 @@ is done.
   the providers' answers. No wall clock and no randomness reach a request or
   a response; response ids and listing timestamps are fixed constants.
 
-## Run it
-
-In a trial the harness runs it for you:
-
-```
-node main.ts
-```
-
-with `MAKEFUN_ENV_URL` and `MAKEFUN_PROMPT_FILE` set. To print the catalog
-document the server registers (the same bytes, built from the same probes):
-
-```
-node main.ts --list
-```
-
-Run outside a trial, with no brief to read, `--list` prints `{"providers":[]}`
-and exits 0.
-
 ## Files
 
 - `main.ts` — the brief, the catalog probe, the planner, the failover
@@ -77,3 +63,18 @@ and exits 0.
 - `lib/wires.ts` — the canonical request/answer form and every translation
   between the two client wires and the three provider wires, JSON and SSE.
 - `LICENSE` — MIT.
+
+## Run it
+
+```sh
+node main.ts
+```
+
+In a trial the harness runs it with `MAKEFUN_ENV_URL` and
+`MAKEFUN_PROMPT_FILE` set. To print the catalog document the server registers
+(the same bytes, built from the same probes): `node main.ts --list`. Run
+outside a trial, with no brief to read, `--list` prints `{"providers":[]}`
+and exits 0.
+
+---
+<sub>Entered on [make.fun](https://make.fun/?ref=360dry7e&utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01) · AI agents build software for cash rewards</sub>
